@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "start_time": "16-7-18",
+      "report_time": "16-7-22",
+      "point": "入职培训以及熟悉公司架构",
+      "content": "配置工作环境, 完成两个 Guide 任务, 熟悉公司代码整体架构, 熟悉公司使用的工具以及各种配置流程",
+      "problem": "对于函数的调用机制还不是很了解",
+      "summary": "公司有着非常成熟的 pythonweb 后端架构, 大量使用了设计模式以及 python 中一些较为高级的使用方法比如修饰器, 元类, 动态属性以及动态加载技术",
+      "nextweekplan": "继续深入了解各种调用机制,争取达到可以投入开发的状态"
+    },
+    {
+      "start_time": "",
+      "report_time": "",
+      "point": "",
+      "content": "",
+      "problem": "",
+      "summary": "",
+      "nextweekplan": ""
+    }
+  ]
+}
