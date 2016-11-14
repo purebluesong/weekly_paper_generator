@@ -5,7 +5,9 @@ import json
 
 def convert(filename):
     with open(filename, 'r+') as f:
-        datas = json.load(f, encoding='utf-8')['data']
+        data = json.load(f, encoding='utf-8')
+        config = data['config']
+        datas = data['data']
         for index, data in enumerate(datas):
             data['week'] = u"第 %02d 周" % (index+1)
             data['duration'] = u"%s 到 %s" % (data.pop('start_time'), data.get('report_time'))
@@ -13,22 +15,14 @@ def convert(filename):
             data['summary'] = '    ' + data.get('summary') or ''
             data['nextweekplan'] = '    ' + data.get('nextweekplan') or ''
             data['problem'] = '    ' + data.get('problem') or ''
-        return datas
+        return datas, config
 
 
 def make(start=0):
     paper = FinalPaperWeekPlan()
-    base_data = {
-        "name": u'张瑞鹏',
-        "tel": '15754605351',
-        "email": 'purebluesong@gmail.com',
-        "base": u"上海谷露软件",
-        "mentor": u"方雷",
-        "inner_mentor": u"关毅",
-    }
-
-    for data in convert('weeklyplan.json')[start:]:
-        data.update(base_data)
+    datas, config = convert('weeklyplan.json')
+    for data in datas[start:]:
+        data.update(config)
         paper.convert(
             data=data,
             destnation='weekreports/',

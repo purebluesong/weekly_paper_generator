@@ -1,4 +1,12 @@
 {
+  "config": {
+    "name": "你的名字",
+    "tel": "你的电话",
+    "email": "你的 email",
+    "base": "你的实习公司",
+    "mentor": "校外导师",
+    "inner_mentor": "校内导师"
+  },
   "data": [
     {
       "start_time": "16-7-18",
