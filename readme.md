@@ -7,7 +7,7 @@ python版本: 2.7
   `pip install python-docx`
 
 ## Usage
-`md  weekreports`
+`md  weekreports`  
 `python paper4json2dox.py`
 
 ## License
