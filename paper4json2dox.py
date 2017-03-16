@@ -18,9 +18,9 @@ def convert(filename):
         return datas, config
 
 
-def make(start=0):
+def make(start=0, filename='weeklyplan.json'):
     paper = FinalPaperWeekPlan()
-    datas, config = convert('weeklyplan.json')
+    datas, config = convert(filename)
     for data in datas[start:]:
         data.update(config)
         paper.convert(
@@ -31,4 +31,11 @@ def make(start=0):
 
 
 if __name__ == '__main__':
-    make()
+    import sys
+    args = {}
+    if '-f' in sys.argv:
+        args['filename'] = sys.argv[sys.argv.index('-f')+1]
+    if '-s' in sys.argv:
+        args['start'] = int(sys.argv[sys.argv.index('-f')+1])
+
+    make(**args)
